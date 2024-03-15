@@ -16,7 +16,7 @@ public class JavaScriptEx {
 		Alert alert=driver.switchTo().alert();
 		alert.accept();
 		
-		
+		driver.quit();
 		
 
 	}
