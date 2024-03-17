@@ -18,6 +18,7 @@ public class AlertJavaScript {
 		Thread.sleep(3000); 
 		Alert alert=driver.switchTo().alert(); 
 		alert.dismiss();
+		driver.quit();
 
 	}
 
