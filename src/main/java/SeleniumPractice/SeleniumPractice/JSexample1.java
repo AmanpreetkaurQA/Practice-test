@@ -27,7 +27,7 @@ public class JSexample1 {
 		Thread.sleep(1000);
 		WebElement LoginButton=driver.findElement(By.xpath("//input[@value='Log In']"));
 		LoginButton.submit();
-		
+		js.executeScript("arguments[0].click();", LoginButton);
 	}
 
 }
