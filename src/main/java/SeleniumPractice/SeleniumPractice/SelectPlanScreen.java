@@ -8,6 +8,7 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
@@ -16,59 +17,90 @@ public class SelectPlanScreen {
 
 	public static void main(String[] args) throws InterruptedException {
 		WebDriver driver = new ChromeDriver();
-		driver.get("https://app-qa.opswire.ai");
 		driver.manage().window().maximize();
-		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
+		driver.get("https://app-qa.opswire.ai");
+		
+		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(20));
 		// To enter the email address in the email input field
 				WebElement enterEmail=driver.findElement(By.xpath("//*[@class='form-group']/child::input[@formcontrolname='email']"));
-				enterEmail.sendKeys("amanpreet+574128@logiciel.io");
+				enterEmail.sendKeys("amanpreet+574@logiciel.io");
 				Thread.sleep(500);
 			
 				// To enter the password in the password input field
 				WebElement password=driver.findElement(By.xpath("//*[@class='form-group']/child::input[@formcontrolname='password']"));
 				password.sendKeys("owner123");
 				
+				
+				WebElement fullboat=driver.findElement(By.xpath("//div[@class='intercom-dfosxs edrs4yi0']"));
+				fullboat.click();
+				fullboat.click();
+				Thread.sleep(1000);
 				//To click on Login Button
 				WebElement LoginButton=driver.findElement(By.xpath("//input[@value='Log In']"));
 				LoginButton.click();
 				
 				// To print the name of the planheading
-				WebElement planHeading= driver.findElement(By.xpath("//*[text()='Membership Plan']"));
-				System.out.println(planHeading.getText());
+				/*
+				 * WebElement planHeading=
+				 * driver.findElement(By.xpath("//*[text()='Membership Plan']"));
+				 * System.out.println(planHeading.getText());
+				 */
 				
 				// To print the confirmation message under plan heading
 				
-				WebElement planConfirmationMessage= driver.findElement(By.xpath("//*[contains(text(),'Confirm if you want a Monthly')]"));
-				System.out.println(planConfirmationMessage.getText());
+				/*
+				 * WebElement planConfirmationMessage= driver.findElement(By.
+				 * xpath("//*[contains(text(),'Confirm if you want a Monthly')]"));
+				 * System.out.println(planConfirmationMessage.getText());
+				 */
 				
-				//To click on annual tab
-				WebElement annualTab= driver.findElement(By.xpath("//li[contains(@class, 'nav-item') and contains(@class, 'active')]/following-sibling::li"));
-				annualTab.click();
+				/*
+				 * //To click on annual tab WebElement annualTab= driver.findElement(By.
+				 * xpath("//li[contains(@class, 'nav-item') and contains(@class, 'active')]/following-sibling::li"
+				 * )); annualTab.click();
+				 */
 				
-				// To click on monthly tab
-				WebElement monthlyTab = driver.findElement(By.xpath("//li[contains(@class, 'nav-item') and contains(@class, 'active')]/preceding-sibling::li"));
-				monthlyTab.click();
+				/*
+				 * // To click on monthly tab WebElement monthlyTab = driver.findElement(By.
+				 * xpath("//li[contains(@class, 'nav-item') and contains(@class, 'active')]/preceding-sibling::li"
+				 * )); monthlyTab.click();
+				 */
 				
-				// To print the name of the plan OpsWire AI Membership
-				WebElement planName= driver.findElement(By.xpath("//*[contains(@class, 'tab-pane') and contains(@class, 'active')]/div/div/child::div/h4"));
-				System.out.println(planName.getText());
+				/*
+				 * // To print the name of the plan OpsWire AI Membership WebElement planName=
+				 * driver.findElement(By.
+				 * xpath("//*[contains(@class, 'tab-pane') and contains(@class, 'active')]/div/div/child::div/h4"
+				 * )); System.out.println(planName.getText());
+				 */
 				
-				// to print the $199Save 50% Off First Month
-				WebElement discount=driver.findElement(By.xpath("//*[contains(@class, 'tab-pane') and contains(@class, 'active')]/div/div/child::div/h3[@class='strike-price']"));
-				System.out.println(discount.getText());
+				/*
+				 * // to print the $199Save 50% Off First Month WebElement
+				 * discount=driver.findElement(By.
+				 * xpath("//*[contains(@class, 'tab-pane') and contains(@class, 'active')]/div/div/child::div/h3[@class='strike-price']"
+				 * )); System.out.println(discount.getText());
+				 */
 				
 				// to click on the Select paid Plan button
 				WebElement selectPaidPlan= driver.findElement(By.xpath("//a[contains(text(), 'Select Paid Plan')]"));
 				selectPaidPlan.click();
 				
-				//To print the text how many users do you have?
+				/*
+				 * //To print the text how many users do you have?
+				 * 
+				 * WebElement usercounttext=driver.findElement(By.
+				 * xpath("//*[contains(text(),'How many users do')]"));
+				 * System.out.println(usercounttext.getText());
+				 */
 				
-				WebElement usercounttext=driver.findElement(By.xpath("//*[contains(text(),'How many users do')]"));
-				System.out.println(usercounttext.getText());
 				
+				/*
+				 * WebElement crossbutton=driver.findElement(By.
+				 * xpath("//div[@class='intercom-ap4nut e13xul2n3']//div[@aria-label='Dismiss']"
+				 * )); crossbutton.click();
+				 */
 				
 				// To click on proceed button
-				WebElement selectProceed= driver.findElement(By.xpath("//*[text()=' Proceed ']"));
+				WebElement selectProceed= driver.findElement(By.xpath("//button[text()=' Proceed ']"));
 				selectProceed.click();
 				
 				// To enter the card holder name
